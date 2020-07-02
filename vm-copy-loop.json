@@ -24,15 +24,6 @@
             "metadata": {
                 "description": "number of vm of each type"
             }
-        },
-        "numberOfDataDisks": {
-            "type": "int",
-            "minValue": 0,
-            "maxValue": 16,
-            "defaultValue": 2,
-            "metadata": {
-                "description": "The number of dataDisks to be returned in the output array."
-            }
         }
     },
     "functions": [
@@ -91,18 +82,6 @@
                             "networkSecurityGroup": {
                                 "id": "[resourceId('Microsoft.Network/networkSecurityGroups',concat('NSG-',parameters('ProjectName')))]"
                             }
-                        }
-                    },
-                    {
-                        "name": "AzureBastionSubnet",
-                        "properties": {
-                            "addressPrefix": "[variables('Bastion_subnet_prefix')]",
-                            "serviceEndpoints": [
-                            ],
-                            "delegations": [
-                            ],
-                            "privateEndpointNetworkPolicies": "Enabled",
-                            "privateLinkServiceNetworkPolicies": "Enabled"
                         }
                     }
                 ]

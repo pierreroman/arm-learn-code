@@ -1,9 +1,7 @@
 # arm-learn-code
 
-az account set -s "f985e147-1750-470c-b5ee-d898e81a25f8"
-
 ## simple loop demo 1:
-az deployment group create -g devops-lab-loop -n devopslab-demo1 -f 1-simple-loop.json
+az deployment group create -g devops-lab-loop-1 -n devopslab-demo1 -f 1-simple-loop.json
 
 ## Simple serial loop demo 2:
 az deployment group create -g devops-lab-loop-2 -n devopslab-demo2 -f 1-simple-loop-serial.json

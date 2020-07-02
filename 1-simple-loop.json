@@ -4,24 +4,15 @@
     "parameters": {
         "storageAccountName": {
             "type": "string",
-            "metadata": {
-                "description": "Name of storage account"
-            },
             "defaultValue": "devopslab"
         },
         "storageAccountType": {
             "type": "string",
-            "metadata": {
-                "description": "Type of storage account"
-            },
             "defaultValue": "Standard_LRS"
         },
         "StorageAccountCount": {
             "type": "int",
-            "defaultValue": 2,
-            "metadata": {
-                "description": "Number of storage accounts"
-            }
+            "defaultValue": 2
         }
     },
     "variables": {
