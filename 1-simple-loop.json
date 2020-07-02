@@ -6,31 +6,25 @@
             "type": "string",
             "metadata": {
                 "description": "Name of storage account"
-            }
+            },
+            "defaultValue": "devopslab"
         },
         "storageAccountType": {
             "type": "string",
             "metadata": {
                 "description": "Type of storage account"
             },
-            "allowedValues": [
-                "Standard_LRS",
-                "Standard_GRS",
-                "Standard_ZRS",
-                "Premium_LRS"
-            ],
             "defaultValue": "Standard_LRS"
         },
         "StorageAccountCount": {
             "type": "int",
-            "defaultValue": 1,
+            "defaultValue": 2,
             "metadata": {
                 "description": "Number of storage accounts"
             }
         }
     },
     "variables": {
-        "storageApiVersion": "2015-06-15"
     },
     "resources": [
         {
@@ -40,18 +34,13 @@
                 "count": "[parameters('StorageAccountCount')]"
             },
             "type": "Microsoft.Storage/storageAccounts",
-            "apiVersion": "[variables('storageApiVersion')]",
+            "apiVersion": "2015-06-15",
             "location": "[resourceGroup().location]",
-            "tags": {
-                "displayName": "[toLower(concat(parameters('storageAccountName'),uniqueString(resourceGroup().id)))]"
-            },
             "properties": {
                 "accountType": "[parameters('storageAccountType')]"
             }
         }
     ],
     "outputs": {
-    },
-    "functions": [
-    ]
+    }
 }
